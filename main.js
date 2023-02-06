@@ -103,10 +103,9 @@ function submitStats() {
 }
 
 function addTeacher() {
-    memory = JSON.parse(localStorage.getItem("memory"));
+    memory = JSON.parse(localStorage.getItem("memory")) || {};
     let textinput_name = document.getElementById("textinput-new-teacher").value;
-    let emptyArrray = [];
-    memory[textinput_name] = emptyArrray;
+    memory[textinput_name] = [];
     localStorage.setItem("memory", JSON.stringify(memory));
     textinput_name = "";
     openPage('index.html');
