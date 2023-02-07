@@ -90,8 +90,14 @@ function showStats() {
         average += stats[i];
     }
     average = average / stats.length;
+    if(average == undefined) {
+        average = "Inte tillräckligt mycket data."
+    }
     let sorted_stats = stats.sort();
     let median = sorted_stats[Math.round(stats.length / 2)];
+    if(median == undefined) {
+        median = "Inte tilräckligt mycket data.";
+    }
     let p_average = document.getElementById("p_average");
     let P_median = document.getElementById("p_median");
     p_average.innerHTML = "Average: " + String(average);
