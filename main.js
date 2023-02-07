@@ -83,6 +83,19 @@ function showStats() {
     let p = document.getElementById("temporary-stats");
     p.innerHTML = memory[currentTeacher];
     generateChart();
+    // Calculate average and median
+    let stats = memory[currentTeacher];
+    let average = 0;
+    for(let i = 0; i < stats.length; i++) {
+        average += stats[i];
+    }
+    average = average / stats.length;
+    let sorted_stats = stats.sort();
+    let median = sorted_stats[Math.round(stats.length / 2)];
+    let p_average = document.getElementById("p_average");
+    let P_median = document.getElementById("p_median");
+    p_average.innerHTML = "Average: " + String(average);
+    P_median.innerHTML = "Median: " + String(median);
 }
 
 function submitStats() {
