@@ -67,7 +67,7 @@ function specifyTeacher(id) {
     console.log(id);
     let currentTeacher = document.getElementById(id).innerHTML;
     localStorage.setItem("current_teacher", currentTeacher);
-    if(window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/choose_teacher.html') {
+    if(window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/choose_teacher.html' || window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/choose_teacher.html#') {
         openPage('show_stats.html');
     } else if(window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/add_stats.html') {
         document.getElementById("dropdown-btn2").innerHTML = currentTeacher;
@@ -90,7 +90,7 @@ function showStats() {
         average += stats[i];
     }
     average = average / stats.length;
-    if(average == NaN) {
+    if(isNaN(average)) {
         average = "Inte tillräckligt mycket data."
     }
     let sorted_stats = stats.sort();
