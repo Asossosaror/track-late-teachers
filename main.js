@@ -6,7 +6,7 @@ function openPage(url) {
 }
 
 function onLoadRedirector() {
-    if(window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/choose_teacher.html' || window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/add_stats.html') {
+    if(window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/choose_teacher.html' || window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/add_stats.html' || window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/choose_teacher.html#') {
         generateDropdown();
     } else if(window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/show_stats.html') {
         showStats();
