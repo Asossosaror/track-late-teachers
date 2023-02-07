@@ -82,6 +82,7 @@ function showStats() {
     h1.innerHTML = currentTeacher;
     let p = document.getElementById("temporary-stats");
     p.innerHTML = memory[currentTeacher];
+    generateChart();
 }
 
 function submitStats() {
@@ -109,4 +110,35 @@ function addTeacher() {
     localStorage.setItem("memory", JSON.stringify(memory));
     textinput_name = "";
     openPage('index.html');
+}
+
+function generateChart() {
+    memory = JSON.parse(localStorage.getItem("memory"));
+    currentTeacher = localStorage.getItem("current_teacher");
+    let stats = memory[currentTeacher];
+    // Create an array with the same length as 'stats'.
+    let x_axis = [];
+    for(let i = 0; i < stats.length; i++) {
+        x_axis.push(i + 1);
+    }
+    // Create chart
+    new Chart("chart", {
+        type: "line",
+        data: {
+            labels: x_axis,
+            dataset: [{
+                fill: false,
+                lineTension: 0,
+                backgroundColor: "rgba(0,0,255,1.0)",
+                borderColor: "rgba(0,0,255,0.1)",
+                data: stats
+            }]
+        },
+        options: {
+            legend: {display: false},
+            scales: {
+                yAxes: [{ticks: {min: 0, max:16}}]
+            }
+        }
+    });
 }
