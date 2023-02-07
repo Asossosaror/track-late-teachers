@@ -139,7 +139,7 @@ function generateChart() {
         type: "line",
         data: {
             labels: x_axis,
-            dataset: [{
+            datasets: [{
                 fill: false,
                 lineTension: 0,
                 backgroundColor: "rgba(0,0,255,1.0)",
