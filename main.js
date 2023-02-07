@@ -80,8 +80,6 @@ function showStats() {
     console.log(currentTeacher);
     let h1 = document.getElementById("teacher-name-h1");
     h1.innerHTML = currentTeacher;
-    let p = document.getElementById("temporary-stats");
-    p.innerHTML = memory[currentTeacher];
     generateChart();
     // Calculate average and median
     let stats = memory[currentTeacher];
