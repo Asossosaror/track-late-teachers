@@ -45,7 +45,7 @@ function generateDropdown() {
     let teachers = Object.keys(memory);
     for(i = 0; i < teachers.length; i++) {
         // Reference the dropdown
-        if(window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/choose_teacher.html') {
+        if(window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/choose_teacher.html' || window.location.href == 'https://asossosaror.github.io/track-late-teachers/html/choose_teacher.html#') {
             parentDiv = document.getElementById("dropdown-links1");
         } else {
             parentDiv = document.getElementById("dropdown-links2");
