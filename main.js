@@ -90,7 +90,7 @@ function showStats() {
         average += stats[i];
     }
     average = average / stats.length;
-    if(average == undefined) {
+    if(average == NaN) {
         average = "Inte tillräckligt mycket data."
     }
     let sorted_stats = stats.sort();
